@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  description: Swagger PoC file
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /customers:
+    get:
+      operationId: "customers.read"
+      tags:
+        - "Customers"
+      summary: "Customer data structure"
+      description: "Read the list of customers in the keystore"
+      responses:
+        200:
+          description: "Successful read customer list operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                CustomerId:
+                  type: "string"
+                TouchpointHashA:
+                  type: "string"
+                Timestamp:
+                  type: "string"
